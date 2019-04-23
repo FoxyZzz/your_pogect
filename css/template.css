@@ -1,0 +1,39 @@
+﻿body {
+	margin:0;
+}
+
+/* .image {
+	margin:30px; 
+	float:left;
+	cursor:pointer;
+	max-height:auto;
+} */
+
+.popup {
+	position: absolute;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	display:none;
+	text-align:center;
+}
+
+.popup_bg {
+	background:rgba(0, 0, 0, 0.473);
+	position:fixed;
+	z-index:1;
+	height:100%;
+	width:100%;
+}
+
+/* доделать чтобы было большое изображение и посередине после клика */
+.popup_img {
+	position: fixed;
+	z-index:2;
+	max-height:100%;
+	max-width:100%;
+	text-align: center;
+	margin-right: 70%;
+	margin-top: 10%; 
+}
