@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Poller+One');
 
 body {
-    background: url(/w2.jpg) no-repeat center center fixed;
+    background: url(/image/w2.jpg) no-repeat center center fixed;
     -moz-background-size: 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%; /* Opera 9.6+ */
@@ -126,7 +126,7 @@ p {
     
 }
 
-img { width:385px; transition:width 0.5s ease; }
+.img { width:385px; transition:width 0.5s ease; }
 .big:hover img { width:450px;
 }
 

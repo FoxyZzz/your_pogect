@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?php
+// Эта функция включает буферизацию вывода. Если буферизация вывода активна,
+//  никакой вывод скрипта не отправляется (кроме заголовков), а сохраняется во внутреннем буфере.
+// Сделано это для того чтобы до установки заголовков ответа ничего не выводилось. 
+// Именно на это и ругался скрипт. Заголовки с помощью функции header можно устанавливать
+//  только если перед ними ничего не выводилось. Помещая весь вывод в буфер мы можно сказать 
+//  передвинули весь контент в конец. Сначала у нас выполняется скрипт, в нем устанавливаются
+//   заголовки и потом после того как скрипт выполнился, буфер отдается пользователю очищается 
+//   и скрипт завершает выполнение
+ob_start(); 
+?><!DOCTYPE html>
     <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +27,7 @@
     <div>
         <div>
             <!--логотип изменить-->
-            <a class="navbar-brand" href="#">ЛОГО ПРОГРАММЫ</a>
+            <a class="navbar-brand" href="#"><img src="image/logo.jpg "/></a>
         </div>
         <div class="top">
             <h1 class="top funny-title section-title">Fast Report Format Converter Online Demo</h1>
@@ -70,12 +80,40 @@
 </div>
 <div class="centered file">
 <?php if(isset($_POST['upload'])): ?>
-<?php  
+<?php 
+
+    function file_force_download($file) {
+    if (file_exists($file)) {
+      // сбрасываем буфер вывода PHP, чтобы избежать переполнения памяти выделенной под скрипт
+      // если этого не сделать файл будет читаться в память полностью!
+      if (ob_get_level()) {
+        ob_end_clean();
+      }
+      // заставляем браузер показать окно сохранения файла. Заголовки
+      header('Content-Description: File Transfer');
+      header('Content-Type: application/octet-stream');
+      header('Content-Disposition: attachment; filename=' . basename($file));
+      header('Content-Transfer-Encoding: binary');
+      header('Expires: 0');
+      header('Cache-Control: must-revalidate');
+      header('Pragma: public');
+      header('Content-Length: ' . filesize($file));
+      // читаем файл и отправляем его пользователю
+      readfile($file);
+      exit;
+  } else {
+      exit('Файл не найден');
+  }
+  }
+
     $uploadedFile = $folder.basename($_FILES['uploadFile']['name']);
     if(is_uploaded_file($_FILES['uploadFile']['tmp_name'])){
     if(move_uploaded_file($_FILES['uploadFile']['tmp_name'],
       $uploadedFile))
+     
     {
+       exec("Export_fp3.exe file.fp3 file.pdf --OUTPUT=PDF");
+       file_force_download('file.pdf');
        echo "Файл загружен :)";
     }
     else
@@ -98,7 +136,7 @@
                               and most importantly – unique, reflecting their interests and tastes </p>
         </div>
         <div class="col-lg-6 big">
-                <img class="img-right image" src="image/s1.jpg" alt="">
+                <img class="img-right image img" src="image/s1.jpg" alt="">
             </div>
     </div>
     <br>
@@ -107,7 +145,7 @@
         <div class="row centered">
             <br>
             <div class="col-lg-6 big">
-                    <img class="img-left image" src="image/s1.jpg" alt="">
+                    <img class="img-left image img" src="image/s1.jpg" alt="">
                 </div>
                 <div class="col-lg-6">
                         <h2 >Причем тут "Fast Report"?</h2>
@@ -129,17 +167,17 @@
         </div>
             <div class="col-lg-4 ">
                 <div class="tilt">
-                    <img src="image/s1.jpg" alt="" class="image">
+                    <img src="image/s1.jpg" alt="" class="image img">
                 </div>
             </div>
             <div class="col-lg-4">
                     <div class="tilt">
-                        <img src="image/s1.jpg" alt="" class="image">
+                        <img src="image/s1.jpg" alt="" class="image img">
                     </div>
                 </div>
                 <div class="col-lg-4">
                         <div class="tilt">
-                            <img src="image/s1.jpg" alt="" class="image">
+                            <img src="image/s1.jpg" alt="" class="image img">
                         </div>
                     </div> 
         </div>
@@ -185,9 +223,9 @@
             <h3 >У меня нет файла формата FP3 :(</h3>
             <br>
             <p>Вы можете скачать один из подготовленных демонстрационных файлов: </p>
-           <li><a href="#">demo_1.fp3x</a></li> 
-           <li><a href="#">demo_1.fp3x</a></li>
-           <li><a href="#">demo_1.fp3x</a></li>
+           <li><a href="files/1.fp3" download="" title="Скачать файл">demo_1.fp3x</a></li> 
+           <li><a href="files/2.fp3" download="" title="Скачать файл">demo_1.fp3x</a></li>
+           <li><a href="files/3.fp3" download="" title="Скачать файл">demo_1.fp3x</a></li>
             <br><br>
         </div>
 </div>
@@ -281,5 +319,6 @@
     <br>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//web-ptica.ru/VRV-files/knopkavverh/19.js"></script>
     </body>
 </html>

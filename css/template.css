@@ -27,13 +27,14 @@
 	width:100%;
 }
 
-/* доделать чтобы было большое изображение и посередине после клика */
+/* доделать чтобы было большое изображение  */
 .popup_img {
-	position: fixed;
+	/* position: fixed; */
 	z-index:2;
 	max-height:100%;
 	max-width:100%;
 	text-align: center;
-	margin-right: 70%;
-	margin-top: 10%; 
+	margin-right: 10%;
+	margin-left: 10%;
+	margin-top: 25%; 
 }
