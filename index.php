@@ -13,10 +13,6 @@ ob_start();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Converter</title>
-<!-- открытие картинки на экран скрипт-->
-<LINK rel="stylesheet" href="/css/template.css" type="text/css">
-<SCRIPT type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></SCRIPT>
-<SCRIPT type="text/javascript" src="/js/popup_img.js"></SCRIPT>
 
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -26,8 +22,8 @@ ob_start();
 <div>
     <div>
         <div>
-            <!--логотип изменить-->
-            <a class="navbar-brand" href="#"><img src="image/logo.jpg "/></a>
+            <!--логотип-->
+            <a class="navbar-brand" href="#"><img src="image/logo1.png "/></a>
         </div>
         <div class="top">
             <h1 class="top funny-title section-title">Fast Report Format Converter Online Demo</h1>
@@ -48,22 +44,13 @@ ob_start();
         <!-- Слайды карусели -->
         <div class="carousel-inner">
             <div class="item active">
-                <img class="img-rounded center-block" class="img-fluid" src="image/k1.jpg"  alt="">
-                <div class="carousel-caption">
-                    Дополнительная информация слайда 1
-                </div>
+                <img class="img-rounded center-block" class="img-fluid" src="image/action4.png"  alt="">
             </div>
             <div class="item">
-                <img class="img-rounded center-block" class="img-fluid" src="image/k1.jpg"  alt="">
-                <div class="carousel-caption">
-                    Дополнительная информация слайда 2
-                </div>
+                <img class="img-rounded center-block" class="img-fluid" src="image/action5.png"  alt="">
             </div>
             <div class="item">
-                <img class="img-rounded center-block" class="img-fluid" src="image/k1.jpg"   alt="">
-                <div class="carousel-caption">
-                    Дополнительная информация слайда 3
-                </div>
+                <img class="img-rounded center-block" class="img-fluid" src="image/action10.png"   alt="">
             </div>
         </div>
         <!-- Навигация карусели (следующий или предыдущий слайд) -->
@@ -127,7 +114,6 @@ ob_start();
     }
     ?>
 <?php else: ?>
-
 <div class="container">
     <div class="row centered">
         <div class="col-lg-6">
@@ -185,31 +171,25 @@ ob_start();
     <br><hr>
 <div class="container">
     <div class="centered">
-            <h6>Попробуйте прямо сейсас!</h6>
+            <h6>Попробуйте прямо сейчас!</h6>
             <br>
-
             <!-- форма загрузки -->
             <form class="form-horizontal container form1" method="post" enctype="multipart/form-data" action="">
                 <h2 class="centered">Демо конвертер</h2>
                 <br>
                 <div class="form-group">
-           
-             <div class="col-sm-5">
-             <input type="text" id="name" class="form-control" name="name" placeholder="Название файла">
-             </div>
              <div class="form-group">
              <div class="col-sm-12">
-             <input type="file" name="uploadFile" id="file">
+             <input type="file" required name="uploadFile" id="file">
              </div>
              </div>
-             
              </div>
-             <div class="form-group">
+             <!-- <div class="form-group">
              <label for="file"  class="col-sm-5 control-label">Файл</label>
-             </div>
+             </div> -->
              <div class="form-group">
              <div class="col-sm-offset-2 col-sm-8">
-             <button type="submit" name="upload" id="submit" class="btn btn-primary button1">Загрузить</button>
+             <button type="submit"  name="upload" id="submit" class="btn btn-primary button1">ВЕРНУТЬ В ФОРМАТЕ PDF</button>
              <div></div>
              </div>
              </div>
@@ -220,6 +200,7 @@ ob_start();
 <br><br>
 <div class="container text-left">
             <div class=" text-left"> 
+            <h3 >Что делать, если:</h3>
             <h3 >У меня нет файла формата FP3 :(</h3>
             <br>
             <p>Вы можете скачать один из подготовленных демонстрационных файлов: </p>
@@ -233,9 +214,9 @@ ob_start();
 </div>
 <hr>
 <div class="container">
-        <h6 class="centered">Зарегистрируйтесь, и будьте в курсе событий!</h6>
+        <h6 class="centered">Подпишись, чтобы быть в курсе событий!</h6>
         <br>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-6">
             <p>Зарегистрируйтесь и получите доступ к полному инструментарию</p>
         </div>
@@ -260,41 +241,51 @@ ob_start();
                 <div class="col-lg-6 text-right">
                         <a href="#">Подробнее</a>
                     </div>
-                </div>
+                </div> -->
 </div>
 
 <br>
 <!--форма регистрация-->
 <form class="form-horizontal container form2">
+<br>
         <h2 class="centered">Создание аккаунта</h2>
         <br>
     <div class="form-group ">
             
       <label for="email" class="col-xs-5 control-label ">Email адрес:</label>
       <div class="col-xs-6">
-        <input type="email" class="form-control " id="email" placeholder="Введите email">
+        <input type="email" required class="form-control " id="email" placeholder="Введите email">
       </div>
     </div>
     <div class="form-group ">
       <label for="password" class="col-xs-5 control-label">Пароль:</label>
       <div class="col-xs-6">
-        <input type="password" class="form-control" id="password" placeholder="Введите пароль">
+        <input type="password" required class="form-control" id="password" placeholder="Введите пароль">
       </div>
     </div>
     <div class="form-group">
       <div class="col-xs-offset-6 col-xs-5">
         <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="save">
-            <label name="save" class="form-check-label" for="save">Запомнить меня</label>
+            <input type="checkbox" class="form-check-input" id="politics" onclick="check();" value="" autocomplete="off"/>
+            <label type="save"   class="form-check-label" for="save">Я согласен(а) на <a href="file.php">обработку персональных данных</a></label>
           </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-xs-offset-4 col-xs-4">
-        <button type="submit" class="btn btn-primary button1">Зарегистрироваться</button>
+        <button type="submit" name="submit"  disabled="" title="" class="btn btn-primary button1">ПОДПИСАТЬСЯ</button>
       </div>
     </div>
   </form>
+  <script type="text/javascript">
+function check() {
+var submit = document.getElementsByName("submit")[0];
+if (document.getElementById("politics").checked)
+submit.disabled = "";
+else
+submit.disabled = "disabled";
+}
+</script>
   <br>
 <hr>
     <div class="container">
@@ -303,20 +294,20 @@ ob_start();
                 <p>ООО "Фастрепорт"</p>
             </div>
             <div class="col-lg-2 b">
-                    <a href="#">Сайт</a>
+                    <a href="https://www.fastreport.ru/ru/">Сайт</a>
                 </div>
                 <div class="col-lg-2 b">
-                        <a href="#">Форум</a>
+                        <a href="https://www.fastreport.ru/ru/forum/index.php">Форум</a>
                     </div>
                     <div class="col-lg-2 b">
-                            <a href="#">Контакты</a>
+                            <a href="https://www.fastreport.ru/ru/contact/">Контакты</a>
                         </div>
                         <div class="col-lg-3 b">
-                                <a href="#">Fast Report open source</a>
+                                <a href="https://www.fastreport.ru/ru/news/411/">Fast Report open source</a>
                             </div>
         </div>
     </div>
-    <br>
+    <!-- <br> -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="//web-ptica.ru/VRV-files/knopkavverh/19.js"></script>

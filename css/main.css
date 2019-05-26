@@ -4,13 +4,13 @@
 
 body {
     background: url(/image/w2.jpg) no-repeat center center fixed;
-    -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: 100%; /* Современные браузеры */
+    -moz-background-size: cover; /*значение предписывает браузеру автоматически и пропорционально масштабировать фоновое изображение по длине и ширине Firefox 3.6+ */
+    -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: cover; /* Opera 9.6+ */
+    background-size: cover; /* Современные браузеры */
     font-family: "Arsenal";
     font-weight: 300;
-    font-size: 24px;
+    font-size: 28px;
     color: #555;
 
     -webkit-font-smoothing: antialiased;
@@ -23,13 +23,13 @@ hr{
     width: 94%;
     border: 0;
     border-top: 1px solid ;
-    margin: 40 3% 40 3%;
+    margin: 50 3% 50 3%;
     padding: 0;
     color: rgba(78, 72, 72, 0.89);
 }
 .navbar-brand {
     margin-left: 40px;
-    margin-bottom: 30px;
+    margin-top: -15px;
 }
 
 
@@ -102,13 +102,13 @@ h6 {
 }
 p {
     font-family: "Arsenal";
-    font-size: 19px;
+    font-size: 23px;
 }
 
 .file{
     font-family: "Pangolin";
-    font-weight: 200;
-    color: #1a1b1bd3;
+    font-weight: 20;
+    color: #111111f5;
     font-size: 30px;
 }
 
@@ -127,7 +127,7 @@ p {
 }
 
 .img { width:385px; transition:width 0.5s ease; }
-.big:hover img { width:450px;
+.big:hover img { width:600px;
 }
 
 .img-right {
@@ -176,16 +176,25 @@ li {
     max-width:50%;
     box-sizing:border-box;
     padding:20px;
-    background:#beeeee;
+    background-image:url(/image/form2.jpg) ;
+    -moz-background-size: cover; /*значение предписывает браузеру автоматически и пропорционально масштабировать фоновое изображение по длине и ширине Firefox 3.6+ */
+    -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: cover; /* Opera 9.6+ */
+    background-size: cover; /* Современные браузеры */
     -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
     box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);  
   }
   .form2{
+    font-family: "Pangolin";  
     margin:0 auto;
     max-width:40%;
     box-sizing:border-box;
     padding:20px;
-    background:#beeeee;
+    background-image:url(/image/form222.jpg) ;
+    -moz-background-size: cover; /*значение предписывает браузеру автоматически и пропорционально масштабировать фоновое изображение по длине и ширине Firefox 3.6+ */
+    -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: cover; /* Opera 9.6+ */
+    background-size: cover; /* Современные браузеры */
     -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
     box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);  
   }
@@ -193,4 +202,15 @@ li {
     padding:10px;
     font-size: 21px;
   }
-  
+  /*расположение кнопки назад*/
+  .but{
+    position: fixed;
+    bottom: 51%;
+    top: 49%;
+
+  }
+  .text{
+      text-align: left;
+      margin-left: 13%;
+      margin-right: 6%;
+  }
