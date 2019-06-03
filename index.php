@@ -17,6 +17,7 @@ ob_start();
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/fontawesome.min.css">
 <link rel="stylesheet" href="css/main.css">
+
     </head>
     <body>
 <div>
@@ -116,13 +117,18 @@ ob_start();
 <?php else: ?>
 <div class="container">
     <div class="row centered">
-        <div class="col-lg-6">
-            <p >Today by substantial holders of prestigious cottages, and the happy couple,
-                             who entered a one-room «Khrushchev,» I want the decor was beautiful and comfortable,
-                              and most importantly – unique, reflecting their interests and tastes </p>
+        <div class="col-lg-6 text-left">
+            <p >Расширение FP3, это:</p>
+            <ul>
+<li>-готовые файл-отчеты, занимающие незначительное дисковое пространство;<li>
+<li>-возможность визуального представления 3Д-модели помещения;</li>
+<li>-многоуровневые базы данных.</li>
+</ul>
+           <p>Формат FP3 или FastReport Prepared Report File представляет собой
+             формат отчета созданного приложением FastReport. </p>
         </div>
         <div class="col-lg-6 big">
-                <img class="img-right image img" src="image/s1.jpg" alt="">
+                <img class="img-right image img" src="image/prog4.jpg" alt="">
             </div>
     </div>
     <br>
@@ -131,39 +137,42 @@ ob_start();
         <div class="row centered">
             <br>
             <div class="col-lg-6 big">
-                    <img class="img-left image img" src="image/s1.jpg" alt="">
+                    <img class="img-left image img" src="image/screen.png" alt="">
                 </div>
                 <div class="col-lg-6">
                         <h2 >Причем тут "Fast Report"?</h2>
-                        <p>Today by substantial holders of prestigious cottages, and the happy couple,
-                             who entered a one-room «Khrushchev,» I want the decor was beautiful and comfortable,
-                              and most importantly – unique, reflecting their interests and tastes</p>
+                        <p>Данная программа встраивается в приложения других разработчиков и используется для 
+                        создания отчетов. Сам формат FP3 был создан компанией Fast Reports Inc. Файлы этого типа 
+                        являются своеобразными логами, результатом работы с проектом отчета FR3. По структуре FP3 
+                        файлы больше всего напоминают формат PDF. Могут содержать в себе изображения, текст и 
+                        структуру отчета. FP3 – полностью сформированный отчет, для “подготовленных” отчетов
+                         FastReport используется формат FR3.</p>
                     </div>
         </div>
     </div>
     <br>
     <div class="container">
         <div class="row centered">
-            <div class="col text-left"> 
+            <div class="col-lg-12 text-left"> 
             <h3 >Как это работает?</h3>
-            <p>Today by substantial holders of prestigious cottages, and the happy couple,
-                    who entered a one-room «Khrushchev,» I want the decor was beautiful and comfortable,
-                     and most importantly – unique, reflecting their interests and tastes</p>
+            <p>Вы загружаете файл в программу, выбираете папку сохранения и нажимаете кнопку "Export".</p>
+            <p>Готовый файл в формате PDF будет находиться в выбранной папке.</p>
             <br><br>
         </div>
+        
             <div class="col-lg-4 ">
                 <div class="tilt">
-                    <img src="image/s1.jpg" alt="" class="image img">
+                    <img src="image/prog1.png" alt="" class="image img">
                 </div>
             </div>
             <div class="col-lg-4">
                     <div class="tilt">
-                        <img src="image/s1.jpg" alt="" class="image img">
+                        <img src="image/prog2.png" alt="" class="image img">
                     </div>
                 </div>
                 <div class="col-lg-4">
                         <div class="tilt">
-                            <img src="image/s1.jpg" alt="" class="image img">
+                            <img src="image/prog3.png" alt="" class="image img">
                         </div>
                     </div> 
         </div>
@@ -246,28 +255,31 @@ ob_start();
 
 <br>
 <!--форма регистрация-->
-<form class="form-horizontal container form2">
-<br>
+<?php
+//проверяем, существуют ли переменные в массиве POST
+if(!isset($_POST['name']) and !isset($_POST['email'])){
+ ?> 
+<form action="" method="post" enctype="multipart/form-data" class="form-horizontal container form2">
+<!-- <br> -->
         <h2 class="centered">Создание аккаунта</h2>
-        <br>
-    <div class="form-group ">
-            
-      <label for="email" class="col-xs-5 control-label ">Email адрес:</label>
+        <br>     
+    <div class="form-group ">      
+      <label class="col-xs-5 control-label ">Email адрес:</label>
       <div class="col-xs-6">
-        <input type="email" required class="form-control " id="email" placeholder="Введите email">
+        <input type="email" name="email" required class="form-control " id="email" placeholder="Введите email">
       </div>
     </div>
     <div class="form-group ">
-      <label for="password" class="col-xs-5 control-label">Пароль:</label>
+      <label class="col-xs-5 control-label">Имя:</label>
       <div class="col-xs-6">
-        <input type="password" required class="form-control" id="password" placeholder="Введите пароль">
+        <input type="text" name="name" required class="form-control" id="name" placeholder="Введите имя">
       </div>
     </div>
     <div class="form-group">
-      <div class="col-xs-offset-6 col-xs-5">
+      <div class="col-xs-offset-2 col-xs-8">
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="politics" onclick="check();" value="" autocomplete="off"/>
-            <label type="save"   class="form-check-label" for="save">Я согласен(а) на <a href="file.php">обработку персональных данных</a></label>
+            Я согласен(а) на <a href="file.php">обработку персональных данных</a>
           </div>
       </div>
     </div>
@@ -277,6 +289,25 @@ ob_start();
       </div>
     </div>
   </form>
+  <?php
+} else {
+ //показываем форму
+ $name = $_POST['name'];
+ $email = $_POST['email'];
+ $name = htmlspecialchars($name);
+ $email = htmlspecialchars($email);
+ $name = urldecode($name);
+ $email = urldecode($email);
+ $name = trim($name);
+ $email = trim($email);
+ if (mail("s.savinova2199@gmail.com", "Заявка с сайта", "ФИО:".$name.". E-mail: ".$email ,"From: example2@mail.ru \r\n")){ 
+ echo "Сообщение успешно отправлено"; 
+ } else { 
+ echo "При отправке сообщения возникли ошибки";
+ }
+}
+?>
+
   <script type="text/javascript">
 function check() {
 var submit = document.getElementsByName("submit")[0];

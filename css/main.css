@@ -100,6 +100,10 @@ h6 {
 
 
 }
+ul{
+    font-family: "Arsenal";
+    font-size: 23px;  
+}
 p {
     font-family: "Arsenal";
     font-size: 23px;
@@ -126,8 +130,8 @@ p {
     
 }
 
-.img { width:385px; transition:width 0.5s ease; }
-.big:hover img { width:600px;
+.img { width:400px; transition:width 0.5s ease; }
+.big:hover img { width:560px;
 }
 
 .img-right {
@@ -187,9 +191,10 @@ li {
   .form2{
     font-family: "Pangolin";  
     margin:0 auto;
-    max-width:40%;
-    box-sizing:border-box;
-    padding:20px;
+    max-width:41%;
+    max-height: 60%;
+    /* box-sizing:border-box; */
+    padding:25px 19px 19px 19px;
     background-image:url(/image/form222.jpg) ;
     -moz-background-size: cover; /*значение предписывает браузеру автоматически и пропорционально масштабировать фоновое изображение по длине и ширине Firefox 3.6+ */
     -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
