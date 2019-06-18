@@ -11,7 +11,7 @@ body {
     font-family: "Arsenal";
     font-weight: 300;
     font-size: 28px;
-    color: #555;
+    color: rgb(26, 24, 24);/*цвет текста*/
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -38,9 +38,7 @@ hr{
     margin-right: 25px; 
     margin-top: 40px;
     font-size: 40px;
-    /* font-family: 'Pangolin';
-    font-weight: 500;
-    color: #1a1b1bd3; */
+   
 }
 
 h1.funny-title{
@@ -89,7 +87,7 @@ h3 {
     font-weight: 200;
     color: #1a1b1bd3;
     font-size: 30px;
-    margin-left: 35px; 
+     
 
 }
 h6 {
@@ -109,12 +107,7 @@ p {
     font-size: 23px;
 }
 
-.file{
-    font-family: "Pangolin";
-    font-weight: 20;
-    color: #111111f5;
-    font-size: 30px;
-}
+
 
 .b {
     font-size: 25px;
@@ -129,7 +122,6 @@ p {
     display:inline-block;
     
 }
-
 .img { width:400px; transition:width 0.5s ease; }
 .big:hover img { width:560px;
 }
@@ -158,22 +150,6 @@ a:hover, a:focus{
 }
 li {
     list-style-type: none; /* Убираем маркеры */
-}
-
-.tilt {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.tilt:hover {
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    -o-transform: rotate(-10deg);
-    -ms-transform: rotate(-10deg);
-    transform: rotate(-10deg);
 }
 .form1{
     margin:0 auto;

@@ -156,25 +156,18 @@ ob_start();
             <div class="col-lg-12 text-left"> 
             <h3 >Как это работает?</h3>
             <p>Вы загружаете файл в программу, выбираете папку сохранения и нажимаете кнопку "Export".</p>
-            <p>Готовый файл в формате PDF будет находиться в выбранной папке.</p>
-            <br><br>
+            <p>Готовый файл в формате PDF будет находиться в выбранной папке.</p>  
+            <br>       
         </div>
-        
-            <div class="col-lg-4 ">
-                <div class="tilt">
-                    <img src="image/prog1.png" alt="" class="image img">
-                </div>
-            </div>
-            <div class="col-lg-4">
-                    <div class="tilt">
-                        <img src="image/prog2.png" alt="" class="image img">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                        <div class="tilt">
-                            <img src="image/prog3.png" alt="" class="image img">
-                        </div>
-                    </div> 
+        <div class="col-lg-4 ">
+            <img src="image/prog1.png" alt="" class="image img" style="width: 100%">
+         </div>
+         <div class="col-lg-4">
+            <img src="image/prog2.png" alt="" class="image img" style="width: 100%">
+        </div>
+        <div class="col-lg-4">
+            <img src="image/prog3.png" alt="" class="image img" style="width: 100%">
+        </div> 
         </div>
     </div>
     <br><hr>
@@ -193,12 +186,9 @@ ob_start();
              </div>
              </div>
              </div>
-             <!-- <div class="form-group">
-             <label for="file"  class="col-sm-5 control-label">Файл</label>
-             </div> -->
              <div class="form-group">
              <div class="col-sm-offset-2 col-sm-8">
-             <button type="submit"  name="upload" id="submit" class="btn btn-primary button1">ВЕРНУТЬ В ФОРМАТЕ PDF</button>
+             <button type="submit"  name="upload" id="submit" class="btn btn-primary button1">СКАЧАТЬ В ФОРМАТЕ PDF</button>
              <div></div>
              </div>
              </div>
@@ -225,32 +215,6 @@ ob_start();
 <div class="container">
         <h6 class="centered">Подпишись, чтобы быть в курсе событий!</h6>
         <br>
-        <!-- <div class="row">
-            <div class="col-lg-6">
-            <p>Зарегистрируйтесь и получите доступ к полному инструментарию</p>
-        </div>
-        <div class="col-lg-6 text-right">
-                <a href="#">Подробнее</a>
-            </div>
-        </div>
-
-        <div class="row">
-                <div class="col-lg-6">
-                <p>Зарегистрируйтесь и получите доступ к полному инструментарию</p>
-            </div>
-            <div class="col-lg-6 text-right">
-                    <a href="#">Подробнее</a>
-                </div>
-            </div>
-
-            <div class="row">
-                    <div class="col-lg-6">
-                    <p>Зарегистрируйтесь и получите доступ к полному инструментарию</p>
-                </div>
-                <div class="col-lg-6 text-right">
-                        <a href="#">Подробнее</a>
-                    </div>
-                </div> -->
 </div>
 
 <br>
@@ -300,8 +264,8 @@ if(!isset($_POST['name']) and !isset($_POST['email'])){
  $email = urldecode($email);
  $name = trim($name);
  $email = trim($email);
- if (mail("s.savinova2199@gmail.com", "Заявка с сайта", "ФИО:".$name.". E-mail: ".$email ,"From: example2@mail.ru \r\n")){ 
- echo "Сообщение успешно отправлено"; 
+ if (mail("s.savinova2199@gmail.com", "Заявка с сайта. Вы успешно подписаны.", "ФИО:".$name.". E-mail: ".$email ,"From: converter@fast-report.com \r\n")){ 
+ echo "Сообщение успешно отправлено вам на почту"; 
  } else { 
  echo "При отправке сообщения возникли ошибки";
  }
